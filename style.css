@@ -1,0 +1,54 @@
+/* Global Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white; /* White background */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.login-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Limiting width for the container */
+}
+
+.google-signin-container {
+    margin-top: 20px;
+}
+
+.bitsathyimg img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.signinbit {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.google-signin {
+    padding: 10px 20px;
+    background-color: #4285F4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.google-signin:hover {
+    background-color: #357ae8;
+}

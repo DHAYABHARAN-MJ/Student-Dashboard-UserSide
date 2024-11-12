@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard Login</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Firebase SDK (v9+) -->
+    <script type="module">
+        // Import Firebase SDK modules
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.8/firebase-app.js';
+        import { getAuth, GoogleAuthProvider, signInWithPopup } from 'https://www.gstatic.com/firebasejs/9.6.8/firebase-auth.js';
+
+        // Firebase Configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAzpvZQbLnqLwn51d7qk9JYxoFem5nDEBU",
+            authDomain: "student-side-3f8b3.firebaseapp.com",
+            projectId: "student-side-3f8b3",
+            storageBucket: "student-side-3f8b3.appspot.com",
+            messagingSenderId: "866332327605",
+            appId: "1:866332327605:web:987db62803ed39b53808fc"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Google Sign-In function
+        async function signInWithGoogle() {
+            const provider = new GoogleAuthProvider();
+            try {
+                const result = await signInWithPopup(auth, provider);
+                const user = result.user;
+                
+                // Send the email to the PHP page
+                const email = user.email;
+                window.location.href = `dashboard.php?email=${encodeURIComponent(email)}`;
+            } catch (error) {
+                console.error('Google Sign-In failed:', error);
+                if (error.code === 'auth/popup-closed-by-user') {
+                    alert('Popup was closed before completing sign-in.');
+                } else {
+                    alert('Sign-In failed. Please try again.');
+                }
+            }
+        }
+
+        // Expose signInWithGoogle to the global scope for the onclick event in HTML
+        window.signInWithGoogle = signInWithGoogle;
+    </script>
+
+    <!-- Google Sign-In SDK -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <div class="google-signin-container">
+                <center>
+                    <div class="bitsathyimg">
+                        <img src="Assets/Bannari_Amman_Institute_of_Technology_logo.png" alt="Bitsathy Logo">
+                    </div>
+                    <p class="signinbit">
+                        Sign in with your <span><b>Bitsathy Gmail</b></span>
+                    </p>
+                </center>
+                <button class="google-signin" onclick="signInWithGoogle()">Sign In with Google</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
