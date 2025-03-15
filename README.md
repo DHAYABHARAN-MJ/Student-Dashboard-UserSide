@@ -11,7 +11,7 @@ A **Student Dashboard** built using **HTML, CSS, PHP, and Google Firebase**, all
 ## 🛠️ Tech Stack  
 - **Frontend:** HTML, CSS  
 - **Backend:** PHP  
-- **Database:** Google Firebase Firestore  
+- **Database:** Google Firebase  
 - **Authentication:** Firebase Authentication  
 
 ## 📦 Installation  
