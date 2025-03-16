@@ -1,4 +1,4 @@
-# 🎓 Student Dashboard  
+# 🎓 Student Dashboard  - User Side
 
 A **Student Dashboard** built using **HTML, CSS, PHP, and Google Firebase**, allowing students to log in, view their details, and access relevant academic information.  
 
